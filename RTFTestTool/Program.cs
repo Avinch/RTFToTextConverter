@@ -12,10 +12,16 @@ namespace RTFTestTool
     {
         static void Main(string[] args)
         {
-            RichTextBox rtBox = new RichTextBox();
-            rtBox.Text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr";
+            string exampleRtf = @"{\rtf1\ansi\deff0
+	        {\colortbl;\red0\green0\blue0;\red255\green0\blue0; }
+	        This line is the default color\line
+		        \cf2
+		        This line is red\line
+		        \cf1
+		        This line is the default color
+        }";
 
-            string str = RTFToText.converting().rtfFromString(rtBox.Rtf);
+            string str = RTFToText.converting().rtfFromString(exampleRtf);
             Console.WriteLine(str);
             Console.ReadLine();
 
